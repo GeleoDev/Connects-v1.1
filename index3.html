@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connects - Telecomunicaciones y Energías Renovables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        :root {
+    --color-primary: #0d2b35;
+    --color-secondary: #1a4a5a;
+    --color-accent: #00BCD4;
+    --color-dark: #06161b;
+    --color-light: #e0f7fa;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray: #607d8b;
+    --color-light-gray: #b0bec5;
+
+            
+            /* Colores de texto */
+            --text-primary: var(--color-light);
+            --text-secondary: var(--color-light-gray);
+            
+            /* Fondos */
+            --bg-primary: var(--color-dark);
+            --bg-secondary: var(--color-primary);
+            --bg-accent: var(--color-accent);
+            
+            /* Botones */
+            --btn-primary: var(--color-accent);
+            --btn-hover: #2980b9;
+            
+            /* Transiciones */
+            --transition-fast: 0.3s ease;
+            --transition-medium: 0.5s ease;
+            --transition-slow: 0.8s ease;
+            
+            /* Sombras */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--transition-medium);
+        }
+
+        .section-title.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-light-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--transition-medium);
+        }
+
+        .section-subtitle.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--btn-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--btn-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            background: var(--bg-secondary);
+            transition: all var(--transition-medium);
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            background: rgba(44, 62, 80, 0.95);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-item {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .navbar-link {
+            color: var(--color-white);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 0;
+            position: relative;
+            transition: all var(--transition-fast);
+        }
+
+        .navbar-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-white);
+            transition: all var(--transition-fast);
+        }
+
+        .navbar-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-link.contact-btn {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: all var(--transition-fast);
+        }
+
+        .navbar-link.contact-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+        }
+
+        .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-white);
+            transition: all var(--transition-medium);
+        }
+
+        /* Hero Slider Styles - Modificado para ser menos alto */
+        .hero {
+            height: 80vh; /* Cambiado de 100vh a 80vh */
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+        }
+
+        .swiper-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .slide-1 {
+            background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80');
+        }
+
+        .slide-2 {
+            background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80');
+        }
+
+        .slide-3 {
+            background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all var(--transition-slow);
+        }
+
+        .hero-content.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-cta {
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-white);
+            opacity: 0.5;
+            transition: all var(--transition-fast);
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+            background-color: var(--color-accent);
+        }
+
+        /* Services Section Styles - Modificado con más altura y efecto hover en íconos */
+        .services {
+            padding: 50px 0; /* Aumentado el padding */
+            background-color: var(--color-primary);
+            position: relative;
+            overflow: hidden;
+            min-height: 20vh; /* Añadido para hacer la sección más larga */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--color-secondary);
+            border-radius: 15px;
+            padding: 40px 30px;
+            width: 500px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--color-accent);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all var(--transition-medium);
+        }
+
+        /* Efecto hover modificado para íconos */
+        .service-card:hover .card-icon {
+            background-color: var(--color-white) !important;
+            color: var(--color-accent) !important;
+            transform: rotateY(180deg);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--color-white);
+            transition: all var(--transition-fast);
+        }
+
+        .card-text {
+            color: var(--color-light-gray);
+            margin-bottom: 25px;
+            transition: all var(--transition-fast);
+        }
+
+        .card-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 2px solid var(--color-accent);
+            color: var(--color-accent);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+
+        .card-btn:hover {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        /* Resto de los estilos... (social, about, contact, footer) */
+        
+        /* Social Media Section */
+        .social {
+            padding: 80px 0;
+            background-color: var(--color-dark);
+            text-align: center;
+        }
+
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--color-white);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--color-primary);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all var(--transition-medium);
+        }
+
+        .about-content.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-text {
+            margin-bottom: 20px;
+            color: var(--color-light-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-btn {
+            margin-top: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all var(--transition-medium);
+        }
+
+        .about-image.animate {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 0.3s;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--color-dark);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--color-secondary);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all var(--transition-medium);
+        }
+
+        .contact-form.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 0;
+            font-size: 1rem;
+            border: none;
+            border-bottom: 2px solid var(--color-gray);
+            outline: none;
+            background: transparent;
+            color: var(--color-white);
+            transition: all var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group input:valid,
+        .form-group textarea:focus,
+        .form-group textarea:valid {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .form-group input:focus ~ label,
+        .form-group input:valid ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group textarea:valid ~ label {
+            top: -15px;
+            left: 0;
+            color: var(--color-accent);
+            font-size: 0.8rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            font-size: 1rem;
+            color: var(--color-gray);
+            pointer-events: none;
+            transition: all var(--transition-fast);
+        }
+
+        .form-btn {
+            width: 100%;
+        }
+
+        .contact-map {
+            flex: 1;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all var(--transition-medium);
+        }
+
+        .contact-map.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.3s;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--color-secondary);
+            color: var(--color-white);
+            padding: 70px 0 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section:first-child {
+            flex: 2;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--color-accent);
+        }
+
+        .footer-text {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all var(--transition-fast);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-white);
+            transition: all var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-white);
+            padding-left: 10px;
+        }
+
+        .footer-links a:hover::after {
+            width: 20px;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--color-accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all var(--transition-medium);
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--color-secondary);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: translateY(-50px);
+            transition: all var(--transition-medium);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content h3 {
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .modal-content p {
+            color: var(--color-light-gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--color-gray);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .close-modal:hover {
+            color: var(--color-white);
+            transform: rotate(90deg);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero {
+                height: 70vh;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .navbar-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(44, 62, 80, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all var(--transition-medium);
+                z-index: 999;
+            }
+
+            .navbar-menu.active {
+                left: 0;
+            }
+
+            .navbar-item {
+                margin: 15px 0;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
+
+            .about-container,
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .about-content,
+            .about-image {
+                width: 100%;
+            }
+
+            .contact-map {
+                height: 300px;
+            }
+
+            .services {
+                min-height: auto;
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+                margin-top: 70px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .service-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <a href="#" class="navbar-logo">Connects</a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="Servicios.html" class="navbar-link">Servicios</a></li>
+                <li class="navbar-item"><a href="fibra-optica.html" class="navbar-link">Fibra Óptica</a></li>
+                <li class="navbar-item"><a href="Energias-renovables.html" class="navbar-link">Energías Renovables</a></li>
+                <li class="navbar-item"><a href="Sobrenosotros.html" class="navbar-link">Sobre Nosotros</a></li>
+                <li class="navbar-item"><a href="index.html#contact" class="navbar-link contact-btn">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide-1">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Conectando el futuro</h1>
+                        <p class="hero-subtitle">Soluciones integrales en telecomunicaciones para tu negocio</p>
+                        <a href="#services" class="hero-cta btn">Descubre más</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-2">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Fibra óptica de última generación</h1>
+                        <p class="hero-subtitle">Velocidad y estabilidad para tus conexiones</p>
+                        <a href="#fiber" class="hero-cta btn">Ver soluciones</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-3">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Energías renovables</h1>
+                        <p class="hero-subtitle">Importación de tecnología sustentable</p>
+                        <a href="#energy" class="hero-cta btn">Conoce nuestros productos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Services Cards -->
+    <section class="services" id="services">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Soluciones adaptadas a tus necesidades</p>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="card-title">Telecomunicaciones</h3>
+                <p class="card-text">Infraestructura y soluciones de conectividad para empresas y hogares.</p>
+                <a href="#services" class="card-btn">Ver más</a>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <h3 class="card-title">Fibra Óptica</h3>
+                <p class="card-text">Instalación y mantenimiento de redes de fibra óptica de alta velocidad.</p>
+                <a href="#fiber" class="card-btn">Ver más</a>
+            </div>
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <h3 class="card-title">Energías Renovables</h3>
+                <p class="card-text">Importación y distribución de tecnología sustentable.</p>
+                <a href="#energy" class="card-btn">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social">
+        <h2 class="section-title">Síguenos en redes</h2>
+        <p class="section-subtitle">Conéctate con nosotros</p>
+        <div class="social-container">
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon" id="instagram-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" id="linkedin-link">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about" id="about">
+        <div class="about-container container">
+            <div class="about-content">
+                <h2 class="section-title">Sobre Connects</h2>
+                <p class="about-text">Connects es una empresa líder en soluciones de telecomunicaciones, especializada en infraestructura de fibra óptica y conectividad de alta velocidad. Con años de experiencia en el sector, hemos expandido nuestro portafolio para incluir tecnologías de energías renovables importadas directamente de los mejores proveedores internacionales.</p>
+                <p class="about-text">Nuestro compromiso es brindar soluciones innovadoras que impulsen el desarrollo tecnológico de nuestros clientes, siempre con un enfoque en la calidad, la sustentabilidad y la excelencia en el servicio.</p>
+                <a href="#about-more" class="about-btn btn">Saber más</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipo de Connects trabajando">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">Estamos aquí para ayudarte</p>
+        <div class="contact-container container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Nombre</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Correo electrónico</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="message">Mensaje</label>
+                </div>
+                <button type="submit" class="form-btn btn">Enviar consulta</button>
+            </form>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016887889454!2d-58.383759!3d-34.603734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM2JzEzLjQiUyA1OMKwMjMnMDEuNSJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container container">
+            <div class="footer-section">
+                <h3 class="footer-title">Connects</h3>
+                <p class="footer-text">Soluciones innovadoras en telecomunicaciones y energías renovables.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Enlaces rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#fiber">Fibra Óptica</a></li>
+                    <li><a href="#energy">Energías Renovables</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123, Ciudad</li>
+                    <li><i class="fas fa-phone"></i> Teléfono: +54 11 1234-5678</li>
+                    <li><i class="fas fa-envelope"></i> Email: info@connects.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Connects. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Social Media Modal -->
+    <div class="modal" id="socialModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Lo sentimos</h3>
+            <p>Las redes sociales están en desarrollo. Pronto estaremos disponibles en todas las plataformas.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar Toggle for Mobile
+            const navbarToggle = document.querySelector('.navbar-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+            
+            navbarToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navbarMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navbarLinks = document.querySelectorAll('.navbar-link');
+            navbarLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navbarToggle.classList.remove('active');
+                    navbarMenu.classList.remove('active');
+                });
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Initialize Swiper for Hero Slider
+            const heroSwiper = new Swiper('.hero-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                on: {
+                    init: function() {
+                        const activeSlide = this.slides[this.activeIndex];
+                        const content = activeSlide.querySelector('.hero-content');
+                        content.classList.add('animate');
+                    },
+                    slideChangeTransitionStart: function() {
+                        const outgoingSlide = this.slides[this.previousIndex];
+                        const outgoingContent = outgoingSlide.querySelector('.hero-content');
+                        outgoingContent.classList.remove('animate');
+                    },
+                    slideChangeTransitionEnd: function() {
+                        const incomingSlide = this.slides[this.activeIndex];
+                        const incomingContent = incomingSlide.querySelector('.hero-content');
+                        incomingContent.classList.add('animate');
+                    }
+                }
+            });
+            
+            // Service Cards Mouse Follow Effect
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const angleX = (y - centerY) / 20;
+                    const angleY = (centerX - x) / 20;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                });
+            });
+            
+            // Social Media Modal
+            const instagramLink = document.getElementById('instagram-link');
+            const linkedinLink = document.getElementById('linkedin-link');
+            const socialModal = document.getElementById('socialModal');
+            const closeModal = document.querySelector('.close-modal');
+            
+            function showModal() {
+                socialModal.classList.add('active');
+            }
+            
+            function hideModal() {
+                socialModal.classList.remove('active');
+            }
+            
+            instagramLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showModal();
+            });
+            
+            linkedinLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showModal();
+            });
+            
+            closeModal.addEventListener('click', hideModal);
+            
+            socialModal.addEventListener('click', (e) => {
+                if (e.target === socialModal) {
+                    hideModal();
+                }
+            });
+            
+            // Scroll Animations
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.section-title, .section-subtitle, .service-card, .contact-form, .contact-map, .about-content, .about-image');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.classList.add('animate');
+                    }
+                });
+            }
+            
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = this.querySelector('#name').value;
+                    const email = this.querySelector('#email').value;
+                    const message = this.querySelector('#message').value;
+                    
+                    console.log('Form submitted:', { name, email, message });
+                    alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+                    this.reset();
+                });
+            }
+            
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.from('.navbar', {
+                duration: 1,
+                y: -100,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.hero-content', {
+                duration: 1.5,
+                y: 50,
+                opacity: 0,
+                ease: 'power3.out',
+                delay: 0.5
+            });
+            
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                gsap.from(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
+            });
+            
+            gsap.to('.footer', {
+                backgroundPosition: '100% 50%',
+                duration: 15,
+                repeat: -1,
+                yoyo: true,
+                ease: 'none'
+            });
+        });
+    </script>
+</body>
+</html>
