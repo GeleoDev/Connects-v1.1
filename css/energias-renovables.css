@@ -196,11 +196,12 @@
 .products {
     padding: 100px 0;
     background-color: var(--color-primary);
+    position: relative;
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     margin-top: 50px;
 }
@@ -213,6 +214,8 @@
     transition: all var(--transition-medium);
     opacity: 0;
     transform: translateY(50px);
+    position: relative;
+    z-index: 1;
 }
 
 .product-card.animate {
@@ -300,22 +303,126 @@
     font-size: 0.9rem;
 }
 
-.product-whatsapp {
-    width: 40px;
-    height: 40px;
-    background-color: #25D366;
-    color: white;
+/* Expanded Info Sections */
+.expanded-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-medium);
+    backdrop-filter: blur(5px);
+}
+
+.expanded-info.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.expanded-content {
+    background-color: var(--color-dark);
+    border-radius: 15px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(50px);
+    transition: all var(--transition-medium);
+}
+
+.expanded-info.active .expanded-content {
+    transform: translateY(0);
+}
+
+.close-expanded {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--color-light-gray);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.close-expanded:hover {
+    color: var(--color-accent);
+}
+
+.expanded-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    transition: all var(--transition-medium);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(52, 152, 219, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    transition: all var(--transition-fast);
+    margin: 0 auto 15px;
+    font-size: 1.5rem;
+    color: var(--color-accent);
 }
 
-.product-whatsapp:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.info-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.info-item p {
+    color: var(--color-light-gray);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.info-cta {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-cta p {
+    color: var(--color-light-gray);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
 }
 
 /* Consultation Section */
@@ -462,6 +569,14 @@
     .consultation-image {
         margin-top: 30px;
     }
+    
+    .expanded-content {
+        padding: 30px 20px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 576px) {
@@ -475,5 +590,38 @@
     
     .products-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .expanded-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos para el logo en la navbar */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-image {
+    height: 40px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    transition: all var(--transition-fast);
+}
+
+/* Ajustes para navbar scrolled */
+.navbar.scrolled .logo-image {
+    height: 35px; /* Tamaño reducido cuando se hace scroll */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 35px;
+    }
+    
+    .navbar.scrolled .logo-image {
+        height: 30px;
     }
 }

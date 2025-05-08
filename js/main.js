@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Social Media Modal
+    const facebookLink = document.getElementById('facebook-link');
     const instagramLink = document.getElementById('instagram-link');
     const linkedinLink = document.getElementById('linkedin-link');
     const socialModal = document.getElementById('socialModal');
@@ -97,6 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
         socialModal.classList.remove('active');
     }
     
+    facebookLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showModal();
+    });
+
     instagramLink.addEventListener('click', (e) => {
         e.preventDefault();
         showModal();
@@ -133,19 +139,64 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     
     // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = this.querySelector('#name').value;
-            const email = this.querySelector('#email').value;
-            const message = this.querySelector('#message').value;
-            
-            console.log('Form submitted:', { name, email, message });
-            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
-            this.reset();
+// Reemplazar la función de envío del formulario con:
+const contactForm = document.getElementById('contactForm');
+const thankYouModal = document.getElementById('thankYouModal');
+const closeModalButtons = document.querySelectorAll('.close-modal, .modal-close-btn');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                showThankYouModal();
+                this.reset();
+            } else {
+                throw new Error('Error en el envío');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un problema al enviar el mensaje. Por favor inténtalo nuevamente más tarde.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar consulta';
         });
+    });
+}
+
+function showThankYouModal() {
+    thankYouModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function hideThankYouModal() {
+    thankYouModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', hideThankYouModal);
+});
+
+thankYouModal.addEventListener('click', (e) => {
+    if (e.target === thankYouModal) {
+        hideThankYouModal();
     }
+});
     
     // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);

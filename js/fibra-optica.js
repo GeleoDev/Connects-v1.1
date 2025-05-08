@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
     
     // Animate sections on scroll
-    const sections = document.querySelectorAll('.partnership, .products, .support');
+    const sections = document.querySelectorAll('.partnership, .products, .samm-cta, .representatives');
     sections.forEach(section => {
         gsap.from(section, {
             scrollTrigger: {
@@ -52,19 +52,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate individual elements
-    const animateElements = () => {
-        const elements = document.querySelectorAll('.section-title, .section-subtitle, .product-card, .partnership-content, .partnership-image, .support-content, .support-image');
+   // En la función animateElements(), actualizar para incluir los logos
+// En la función animateElements(), agregar la nueva sección
+const animateElements = () => {
+    const elements = document.querySelectorAll(
+        '.section-title, .section-subtitle, .product-card, ' +
+        '.partnership-content, .partnership-logos, ' +
+        '.samm-cta-content, .samm-cta-image, ' +
+        '.representatives-content'
+    );
+    
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
         
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementPosition < windowHeight - 100) {
-                element.classList.add('animate');
-            }
-        });
-    };
+        if (elementPosition < windowHeight - 100) {
+            element.classList.add('animate');
+        }
+    });
+};
+
+
     
     // Initial check
     animateElements();
@@ -91,26 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-        });
-    });
-    
-    // WhatsApp button effect
-    const whatsappButtons = document.querySelectorAll('.product-whatsapp');
-    whatsappButtons.forEach(button => {
-        button.addEventListener('mouseenter', () => {
-            gsap.to(button, {
-                scale: 1.1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-        
-        button.addEventListener('mouseleave', () => {
-            gsap.to(button, {
-                scale: 1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
         });
     });
     

@@ -690,3 +690,33 @@ img {
         min-width: 100%;
     }
 }
+
+/* Estilos para el logo en la navbar */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-image {
+    height: 40px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    transition: all var(--transition-fast);
+}
+
+/* Ajustes para navbar scrolled */
+.navbar.scrolled .logo-image {
+    height: 35px; /* Tamaño reducido cuando se hace scroll */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 35px;
+    }
+    
+    .navbar.scrolled .logo-image {
+        height: 30px;
+    }
+}
+

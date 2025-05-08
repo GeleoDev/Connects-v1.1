@@ -94,23 +94,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // WhatsApp button effect
-    const whatsappButtons = document.querySelectorAll('.product-whatsapp');
-    whatsappButtons.forEach(button => {
-        button.addEventListener('mouseenter', () => {
-            gsap.to(button, {
-                scale: 1.1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
+    // Expandable product info functionality
+    const expandButtons = document.querySelectorAll('.expand-btn');
+    const expandedInfos = document.querySelectorAll('.expanded-info');
+    const closeButtons = document.querySelectorAll('.close-expanded');
+    
+    expandButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const targetInfo = document.getElementById(targetId);
+            
+            if (targetInfo) {
+                // Close any open info sections first
+                expandedInfos.forEach(info => {
+                    info.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Open the selected one
+                targetInfo.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Animate the content in
+                gsap.from(targetInfo.querySelector('.expanded-content'), {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            }
         });
-        
-        button.addEventListener('mouseleave', () => {
-            gsap.to(button, {
-                scale: 1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
+    });
+    
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const parentInfo = button.closest('.expanded-info');
+            if (parentInfo) {
+                parentInfo.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    
+    // Close expanded info when clicking outside content
+    expandedInfos.forEach(info => {
+        info.addEventListener('click', (e) => {
+            if (e.target === info) {
+                info.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
     });
     

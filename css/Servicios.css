@@ -214,7 +214,7 @@ img {
 .services-hero {
     height: 60vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80');
+                url('../datacenter-moderno.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -587,5 +587,33 @@ img {
 
     .footer-section {
         min-width: 100%;
+    }
+}
+/* Estilos para el logo en la navbar */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-image {
+    height: 40px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    transition: all var(--transition-fast);
+}
+
+/* Ajustes para navbar scrolled */
+.navbar.scrolled .logo-image {
+    height: 35px; /* Tamaño reducido cuando se hace scroll */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 35px;
+    }
+    
+    .navbar.scrolled .logo-image {
+        height: 30px;
     }
 }

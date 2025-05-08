@@ -12,16 +12,20 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container container">
-            <a href="index.html" class="navbar-logo">Connects</a>
+            <a href="index.html" class="navbar-logo">
+                <img src="ConnectsLogo.png" alt="Connects Logo" class="logo-image">
+            </a>
             <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             <ul class="navbar-menu">
-                <li class="navbar-item"><a href="index.html#services" class="navbar-link">Servicios</a></li>
+                <li class="navbar-item"><a href="Servicios.html" class="navbar-link">Servicios</a></li>
                 <li class="navbar-item"><a href="fibra-optica.html" class="navbar-link">Fibra Óptica</a></li>
-                <li class="navbar-item"><a href="energias-renovables.html" class="navbar-link">Energías Renovables</a></li>
-                <li class="navbar-item"><a href="index.html#about" class="navbar-link">Sobre Nosotros</a></li>
-                <li class="navbar-item"><a href="index.html#contact" class="navbar-link contact-btn">Contacto</a></li>
+                <li class="navbar-item"><a href="Energias-renovables.html" class="navbar-link">Energías Renovables</a></li>
+                <li class="navbar-item"><a href="./Sobrenosotros.html" class="navbar-link">Sobre Nosotros</a></li>
+                <li class="navbar-item"><a href="#contact" class="navbar-link contact-btn">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -52,7 +56,7 @@
                 </ul>
             </div>
             <div class="mission-image">
-                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Paneles solares">
+                <img src="energypanel.jpg" alt="Paneles solares">
             </div>
         </div>
     </section>
@@ -119,149 +123,139 @@
     <section class="products" id="products">
         <div class="products-container container">
             <h2 class="section-title">Nuestros Productos</h2>
-            <p class="section-subtitle">Tecnología solar de última generación</p>
+            <p class="section-subtitle">Soluciones energéticas para cada necesidad</p>
             
             <div class="products-grid">
-                <!-- Producto 1 - Panel Solar Completo -->
+                <!-- Panel Solar -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Panel Solar Monocristalino">
+                        <img src="panele.jpg" alt="Panel Solar Monocristalino">
                         <div class="product-badge">Popular</div>
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Panel Solar Monocristalino 450W</h3>
+                        <h3 class="product-title">Paneles Solares</h3>
                         <div class="product-specs">
                             <div class="spec-item">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Eficiencia: 20.5%</span>
+                                <i class="fas fa-sun"></i>
+                                <span>Transforman la luz solar en electricidad</span>
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>Dimensiones: 2000×1000×35mm</span>
+                                <i class="fas fa-home"></i>
+                                <span>Ideales para casas y negocios</span>
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-weight"></i>
-                                <span>Peso: 22.5 kg</span>
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Ahorro en tu factura eléctrica</span>
                             </div>
                         </div>
-                        <p class="product-description">Panel solar de alta eficiencia con células monocristalinas PERC, ideal para instalaciones residenciales y comerciales donde el espacio es limitado.</p>
+                        <p class="product-description">Los paneles solares capturan la energía del sol y la convierten en electricidad limpia para tu hogar o negocio.</p>
                         <div class="product-footer">
-                            <a href="producto-detalle-energia.html" class="product-btn btn">Ver Detalles</a>
-                            
+                            <button class="product-btn btn expand-btn" data-target="panel-info">Saber más</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Producto 2 - Vacío -->
+                <!-- Banco de Energía -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="bateri.jpg" alt="Producto Solar">
+                        <img src="bateri.jpg" alt="Banco de Energía">
+                        <div class="product-badge">Nuevo</div>
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
+                        <h3 class="product-title">Bancos de Energía</h3>
                         <div class="product-specs">
                             <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
+                                <i class="fas fa-battery-full"></i>
+                                <span>Almacenan energía para cuando la necesites</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-moon"></i>
+                                <span>Funcionan de noche o en cortes de luz</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-plug"></i>
+                                <span>Compatibles con paneles solares</span>
                             </div>
                         </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
+                        <p class="product-description">Los bancos de energía guardan la electricidad generada por tus paneles para usarla cuando más la necesites.</p>
                         <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
+                            <button class="product-btn btn expand-btn" data-target="battery-info">Saber más</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Producto 3 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="bateri.jpg" alt="Producto Solar">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
+            </div>
+            
+            <!-- Información expandible -->
+            <div class="expanded-info" id="panel-info">
+                <div class="expanded-content">
+                    <button class="close-expanded"><i class="fas fa-times"></i></button>
+                    <h3>Paneles Solares: Energía Limpia para tu Hogar</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-sun"></i>
                             </div>
+                            <h4>¿Cómo funcionan?</h4>
+                            <p>Los paneles solares capturan la luz del sol y la transforman en electricidad que puedes usar en tu casa. Es como tener tu propia pequeña planta de energía en el techo.</p>
                         </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h4>Ahorro garantizado</h4>
+                            <p>Desde el primer mes verás la diferencia en tu factura de luz. La inversión se recupera normalmente en 4-7 años, y luego ¡es energía gratis por décadas!</p>
                         </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Para tu hogar</h4>
+                            <p>Un sistema típico para una casa puede tener entre 6-12 paneles, dependiendo de tu consumo. Calculamos exactamente lo que necesitas.</p>
+                        </div>
+                    </div>
+                    <div class="info-cta">
+                        <p>¿Quieres saber cuánto podrías ahorrar con paneles solares?</p>
+                        <a href="#contact" class="btn">Contacta a un especialista</a>
                     </div>
                 </div>
-                
-                <!-- Producto 4 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="bateri.jpg" alt="Producto Solar">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
+            </div>
+            
+            <div class="expanded-info" id="battery-info">
+                <div class="expanded-content">
+                    <button class="close-expanded"><i class="fas fa-times"></i></button>
+                    <h3>Bancos de Energía: Electricidad Cuando la Necesites</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-bolt"></i>
                             </div>
+                            <h4>Respaldo energético</h4>
+                            <p>Guarda el exceso de energía que producen tus paneles durante el día para usarlo de noche o durante cortes de electricidad.</p>
                         </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Producto 5 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="bateri.jpg" alt="Producto Solar">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-solar-panel"></i>
                             </div>
+                            <h4>Perfecto con paneles</h4>
+                            <p>Maximiza el uso de tu energía solar, permitiéndote ser más independiente de la red eléctrica convencional.</p>
                         </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Producto 6 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="bateri.jpg" alt="Producto Solar">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
                             </div>
+                            <h4>Durabilidad</h4>
+                            <p>Nuestros bancos de energía están diseñados para durar años, con tecnología que protege las baterías y optimiza su rendimiento.</p>
                         </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
-                        </div>
+                    </div>
+                    <div class="info-cta">
+                        <p>¿Interesado en almacenar tu propia energía?</p>
+                        <a href="#contact" class="btn">Hablemos de tu proyecto</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Consultation Section -->
-    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container container">
@@ -272,19 +266,19 @@
             <div class="footer-section">
                 <h3 class="footer-title">Enlaces rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html#services">Servicios</a></li>
+                    <li><a href="Servicios.html">Servicios</a></li>
                     <li><a href="fibra-optica.html">Fibra Óptica</a></li>
-                    <li><a href="energias-renovables.html">Energías Renovables</a></li>
-                    <li><a href="index.html#about">Sobre Nosotros</a></li>
-                    <li><a href="index.html#contact">Contacto</a></li>
+                    <li><a href="Energias-renovables.html">Energías Renovables</a></li>
+                    <li><a href="./Sobrenosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3 class="footer-title">Contacto</h3>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123, Ciudad</li>
-                    <li><i class="fas fa-phone"></i> Teléfono: +54 11 1234-5678</li>
-                    <li><i class="fas fa-envelope"></i> Email: info@connects.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Montes de Oca 501, Barracas</li>
+                    <li><i class="fas fa-phone"></i> Teléfono: </li>
+                    <li><i class="fas fa-envelope"></i> Email: </li>
                 </ul>
             </div>
         </div>
@@ -307,5 +301,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="js/energias-renovables.js"></script>
+    <script src="./js/Sobrenosotros.js"></script>
 </body>
 </html>

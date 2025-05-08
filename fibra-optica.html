@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,14 @@
     <link rel="stylesheet" href="css/fibra-optica.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container container">
-            <a href="index.html" class="navbar-logo">Connects</a>
+            <a href="index.html" class="navbar-logo">
+                <img src="ConnectsLogo.png" alt="Connects Logo" class="logo-image">
+            </a>
             <div class="navbar-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -22,8 +26,8 @@
                 <li class="navbar-item"><a href="Servicios.html" class="navbar-link">Servicios</a></li>
                 <li class="navbar-item"><a href="fibra-optica.html" class="navbar-link">Fibra Óptica</a></li>
                 <li class="navbar-item"><a href="Energias-renovables.html" class="navbar-link">Energías Renovables</a></li>
-                <li class="navbar-item"><a href="Sobrenosotros.html" class="navbar-link">Sobre Nosotros</a></li>
-                <li class="navbar-item"><a href="index.html#contact" class="navbar-link contact-btn">Contacto</a></li>
+                <li class="navbar-item"><a href="./Sobrenosotros.html" class="navbar-link">Sobre Nosotros</a></li>
+                <li class="navbar-item"><a href="#contact" class="navbar-link contact-btn">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -33,7 +37,11 @@
         <div class="fiber-hero-content">
             <h1 class="fiber-hero-title">Fibra Óptica de Alta Calidad</h1>
             <p class="fiber-hero-subtitle">Tecnología avanzada importada directamente desde Turquía</p>
-            <a href="#products" class="fiber-hero-btn btn">Ver Productos</a>
+            <div class="fiber-hero-buttons">
+                <a href="#products" class="fiber-hero-btn btn">Ver Productos</a>
+                <a href="https://www.samm.com/" target="_blank" class="fiber-hero-btn btn btn-special">¡Internet
+                    Day! Connects x Samm Teknoloji</a>
+            </div>
         </div>
     </section>
 
@@ -42,8 +50,12 @@
         <div class="partnership-container container">
             <div class="partnership-content">
                 <h2 class="section-title">Alianza Estratégica con SAMM Teknoloji</h2>
-                <p class="partnership-text">En Connects hemos establecido una alianza estratégica con SAMM Teknoloji, líder turco en fabricación de componentes de fibra óptica, para brindar a nuestros clientes productos de la más alta calidad a precios competitivos.</p>
-                <p class="partnership-text">SAMM Teknoloji es reconocido internacionalmente por su innovación y estándares de calidad en la producción de cables de fibra óptica, conectores, empalmes y accesorios para redes FTTH (Fiber To The Home).</p>
+                <p class="partnership-text">En Connects hemos establecido una alianza estratégica con SAMM Teknoloji,
+                    líder turco en fabricación de componentes de fibra óptica, para brindar a nuestros clientes
+                    productos de la más alta calidad a precios competitivos.</p>
+                <p class="partnership-text">SAMM Teknoloji es reconocido internacionalmente por su innovación y
+                    estándares de calidad en la producción de cables de fibra óptica, conectores, empalmes y accesorios
+                    para redes FTTH (Fiber To The Home).</p>
                 <p class="partnership-text">Esta colaboración nos permite ofrecer:</p>
                 <ul class="partnership-list">
                     <li>Productos certificados con estándares internacionales</li>
@@ -53,150 +65,77 @@
                     <li>Entrega en tiempo récord</li>
                 </ul>
             </div>
-            <div class="partnership-image">
-                <img src="./Samm.jpg">
+            <div class="partnership-logos">
+                <div class="logo-container logo-left">
+                    <img src="ConnectsLogo.png" alt="Connects Logo" class="logo-connects">
+                </div>
+                <div class="logo-x">×</div>
+                <div class="logo-container logo-right">
+                    <img src="SammLogo.png" alt="Samm Teknoloji Logo" class="logo-samm">
+                </div>
             </div>
         </div>
     </section>
-
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="products-container container">
-            <h2 class="section-title">Nuestros Productos</h2>
-            <p class="section-subtitle">Componentes de fibra óptica de última generación</p>
-            
+            <h2 class="section-title">Catálogos de Productos</h2>
+            <p class="section-subtitle">Soluciones completas en fibra óptica</p>
+
             <div class="products-grid">
-                <!-- Producto 1 - Completo -->
+                <!-- Cableado Estructurado -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="./fiber1.jpg" alt="Cable de Fibra Óptica">
-                        <div class="product-badge">Nuevo</div>
+                        <img src="CableadoEstructurado.png" alt="Cableado Estructurado">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Cable de Fibra Óptica Monomodo</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>Diámetro: 9/125 µm</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-bolt"></i>
-                                <span>Longitud de onda: 1310/1550 nm</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-layer-group"></i>
-                                <span>Fibras: 12-144</span>
-                            </div>
-                        </div>
-                        <p class="product-description">Cable de fibra óptica monomodo para exteriores con protección anti-humedad y resistencia a tensiones mecánicas.</p>
-                        <div class="product-footer">
-                            <a href="producto-detalle.html" class="product-btn btn">Ver Detalles</a>
-                            
+                        <h3 class="product-title">Cableado Estructurado</h3>
+                        <p class="product-subtitle">Sistemas completos para redes de datos</p>
+                        <div class="product-buttons">
+                            <a href="#" class="product-btn btn btn-download" download>
+                                <i class="fas fa-file-pdf"></i> Descargar Catálogo
+                            </a>
+                            <a href="https://www.samm.com/online-catalogue/" target="_blank" class="product-btn btn btn-samm">
+                                <i class="fas fa-external-link-alt"></i> Samm Teknoloji
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Producto 2 - Vacío -->
+
+                <!-- Cajas de Fibra Óptica -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="./fiber1.jpg" alt="Producto de Fibra Óptica">
+                        <img src="CajasFibraOptica.png" alt="Cajas de Fibra Óptica">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
-                            </div>
-                        </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
+                        <h3 class="product-title">Cajas de Fibra Óptica</h3>
+                        <p class="product-subtitle">Protección y organización para empalmes</p>
+                        <div class="product-buttons">
+                            <a href="#" class="product-btn btn btn-download" download>
+                                <i class="fas fa-file-pdf"></i> Descargar Catálogo
+                            </a>
+                            <a href="https://www.samm.com/online-catalogue/" target="_blank" class="product-btn btn btn-samm">
+                                <i class="fas fa-external-link-alt"></i> Samm Teknoloji
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Producto 3 - Vacío -->
+
+                <!-- Redes para Centros de Datos -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="./fiber1.jpg" alt="Producto de Fibra Óptica">
+                        <img src="DatacenterSolutions.png" alt="Redes para Centros de Datos">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
-                            </div>
-                        </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Producto 4 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./fiber1.jpg" alt="Producto de Fibra Óptica">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
-                            </div>
-                        </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Producto 5 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./fiber1.jpg" alt="Producto de Fibra Óptica">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
-                            </div>
-                        </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Producto 6 - Vacío -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./fiber1.jpg" alt="Producto de Fibra Óptica">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Nombre del Producto</h3>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Especificaciones técnicas</span>
-                            </div>
-                        </div>
-                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
-                        <div class="product-footer">
-                            <a href="#" class="product-btn btn">Ver Detalles</a>
-                            
+                        <h3 class="product-title">Redes para Centros de Datos</h3>
+                        <p class="product-subtitle">Infraestructura de alta capacidad</p>
+                        <div class="product-buttons">
+                            <a href="#" class="product-btn btn btn-download" download>
+                                <i class="fas fa-file-pdf"></i> Descargar Catálogo
+                            </a>
+                            <a href="https://www.samm.com/online-catalogue/" target="_blank" class="product-btn btn btn-samm">
+                                <i class="fas fa-external-link-alt"></i> Samm Teknoloji
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -204,7 +143,35 @@
         </div>
     </section>
 
-    
+    <!-- Samm CTA Section -->
+    <section class="samm-cta">
+        <div class="samm-cta-container container">
+            <div class="samm-cta-content">
+                <h2 class="section-title">Descubre más productos de Samm Teknoloji</h2>
+                <p class="samm-cta-text">Nuestro socio estratégico ofrece una amplia gama de soluciones en fibra óptica
+                    de última generación.</p>
+                <a href="https://www.samm.com/" target="_blank" class="samm-cta-btn btn">Visitar Samm Teknoloji</a>
+            </div>
+            <div class="samm-cta-image">
+                <img src="./Samm.jpg" alt="Samm Teknoloji">
+            </div>
+        </div>
+    </section>
+
+    <!-- Representantes Section -->
+<section class="representatives">
+    <div class="representatives-container container">
+        <div class="representatives-content">
+            <h2 class="section-title">Distribuidor Oficial</h2>
+            <p class="representatives-text">Somos los distribuidores de Samm Teknoloji en la región. Ante cualquier duda sobre sus productos, contáctate con nuestro equipo de especialistas.</p>
+            <div class="representatives-buttons">
+                <a href="index.html#contact" class="representatives-btn btn btn-contact">Contactar Ahora</a>
+                <a href="certificado-sociedad.pdf" download class="representatives-btn btn btn-certificate">Descargar Certificado de Sociedad</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -216,19 +183,19 @@
             <div class="footer-section">
                 <h3 class="footer-title">Enlaces rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html#services">Servicios</a></li>
+                    <li><a href="Servicios.html">Servicios</a></li>
                     <li><a href="fibra-optica.html">Fibra Óptica</a></li>
-                    <li><a href="index.html#energy">Energías Renovables</a></li>
-                    <li><a href="index.html#about">Sobre Nosotros</a></li>
-                    <li><a href="index.html#contact">Contacto</a></li>
+                    <li><a href="Energias-renovables.html">Energías Renovables</a></li>
+                    <li><a href="./Sobrenosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3 class="footer-title">Contacto</h3>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123, Ciudad</li>
-                    <li><i class="fas fa-phone"></i> Teléfono: +54 11 1234-5678</li>
-                    <li><i class="fas fa-envelope"></i> Email: info@connects.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Montes de Oca 501, Barracas</li>
+                    <li><i class="fas fa-phone"></i> Teléfono: </li>
+                    <li><i class="fas fa-envelope"></i> Email: </li>
                 </ul>
             </div>
         </div>
@@ -242,5 +209,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="js/fibra-optica.js"></script>
+    <script src="js/main.js"></script>
+    <script src="./js/Sobrenosotros.js"></script>
 </body>
+
 </html>
